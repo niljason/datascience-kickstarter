@@ -90,9 +90,9 @@ def main() -> None:
         )
 
         exporter = LatexExporter()
-        # The notebook remains the complete reproducible code artifact; the PDF is
-        # a concise report focused on assumptions, results, and diagnostics.
-        exporter.exclude_input = True
+        # Keep the rendered PDF aligned with the notebook: both show code, prose,
+        # and the selected outputs retained in the notebook.
+        exporter.exclude_input = False
         exporter.exclude_input_prompt = True
         exporter.exclude_output_prompt = True
         latex, resources = exporter.from_notebook_node(notebook)
